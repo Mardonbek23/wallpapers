@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/liner"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:alpha="0.6"
+    android:backgroundTint="#00FFFFFF"
+    android:orientation="vertical">
+
+    <io.alterac.blurkit.BlurLayout
+        app:blk_fps="0"
+        android:layout_width="match_parent"
+        android:layout_height="140dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/website"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Website:https://unsplash.com"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Website:https://unsplash.com"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/downloads"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Website:https://unsplash.com"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Website:https://unsplash.com"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </io.alterac.blurkit.BlurLayout>
+
+</LinearLayout>
