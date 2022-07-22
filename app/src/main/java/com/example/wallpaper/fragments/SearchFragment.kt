@@ -8,6 +8,7 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.paging.map
 import com.example.wallpaper.R
 import com.example.wallpaper.adapters.SearchPhotoAdapter
 import com.example.wallpaper.databinding.FragmentSearchBinding
@@ -105,6 +106,9 @@ class SearchFragment : Fragment(), CoroutineScope {
                     Log.d("TAG", "onCreateView: " + this)
                 }
                 .collect {
+                    Log.d("collect search", "setData: "+it.map {
+                        it.urls.raw
+                    })
                     photoAdapter.submitData(it)
                 }
         }

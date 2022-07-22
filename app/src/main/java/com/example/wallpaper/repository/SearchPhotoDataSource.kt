@@ -29,20 +29,27 @@ class SearchPhotoDataSource(var query:String,var order_by:String):PagingSource<I
                 photoRepository.getSearchPhotos(currentPage, query = query,order_by=order_by)
                     .catch {
                         Log.d("catch", "load: " + currentPage)
-                        loadResult = LoadResult.Page(emptyList(), prevKey, currentPage + 1)
+
                     }
                     .collect {
                         Log.d("collect", "load2: " + currentPage)
-                        loadResult = LoadResult.Page(it.results, prevKey, currentPage + 1)
+                        if (it.results.size>0){
+                            loadResult = LoadResult.Page(it.results, prevKey, currentPage + 1)
+                        }
+                        else{
+                            loadResult=LoadResult.Page(emptyList(),null,null)
+                        }
                     }
             } else {
-                loadResult = LoadResult.Page(emptyList(), prevKey, currentPage + 1)
+                loadResult = LoadResult.Page(emptyList(), prevKey, null)
             }
             return loadResult!!
         } catch (e: IOException) {
+            Log.d("io==", "load: "+e.message+" code=")
             return LoadResult.Error(e)
         }
         catch (e:HttpException){
+            Log.d("http==", "load: "+e.message()+" code="+e.code())
             return LoadResult.Error(e)
         }
 

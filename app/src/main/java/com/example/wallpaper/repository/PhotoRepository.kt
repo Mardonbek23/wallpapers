@@ -1,6 +1,7 @@
 package com.example.wallpaper.repository
 
 import com.example.wallpaper.retrofit.ApiService
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 
 class PhotoRepository(private var apiService: ApiService) {

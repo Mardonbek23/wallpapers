@@ -74,6 +74,7 @@ class ViewFragment : Fragment(), CoroutineScope {
                     binding.progress.visibility = View.GONE
                 }
                 .collect {
+                    Log.d("colect in ui", "setData: "+it)
                     photoAdapter.submitData(it)
                     binding.progress.visibility = View.GONE
                 }
